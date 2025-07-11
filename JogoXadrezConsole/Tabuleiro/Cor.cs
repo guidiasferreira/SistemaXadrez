@@ -9,13 +9,6 @@ namespace tabuleiro {
         Branca,
         Preta,
         Amarela,
-        Azul,
-        Vermelha,
-        Verde,
-        Laranja,
-        Roxo,
-        Rosa,
-        Cinza,
-        Marrom
+        Azul
     }
 }
