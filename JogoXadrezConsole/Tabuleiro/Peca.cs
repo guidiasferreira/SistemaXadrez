@@ -11,8 +11,8 @@ namespace tabuleiro {
         public Cor Cor { get; protected set; }
         public int QuantMovimentos { get; protected set; }
 
-        public Peca(Posicao posicao, Cor cor, Tabuleiro tabuleiro) {
-            Posicao = posicao;
+        public Peca(Tabuleiro tabuleiro, Cor cor) {
+            Posicao = null;
             Cor = cor;        
             Tabuleiro = tabuleiro;
             QuantMovimentos = 0;

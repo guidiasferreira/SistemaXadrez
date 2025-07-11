@@ -17,6 +17,5 @@ namespace tabuleiro {
         Rosa,
         Cinza,
         Marrom
-
     }
 }
