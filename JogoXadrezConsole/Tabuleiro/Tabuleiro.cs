@@ -5,17 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Tabuleiros {
-    internal class Posicao {
+    internal class Tabuleiro {
         public int Linha { get; set; }
         public int Coluna { get; set; }
 
-        public Posicao(int linha, int coluna) {
+        private Peca[,] pecas;
+
+        public Tabuleiro(int linha, int coluna) {
             Linha = linha;
             Coluna = coluna;
-        }
-
-        public override string ToString() {
-            return Linha + ", " + Coluna;
+            pecas = new Peca[linha, coluna];
         }
     }
 }
