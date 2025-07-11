@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tabuleiros {
+namespace tabuleiro {
     internal enum Cor {
         Branca,
         Preta,
