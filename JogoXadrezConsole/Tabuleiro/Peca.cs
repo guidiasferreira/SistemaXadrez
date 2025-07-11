@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace tabuleiro {
-    internal class Peca {
+    abstract class Peca {
         public Posicao Posicao { get; set; }
         public Tabuleiro Tabuleiro { get; protected set; }
         public Cor Cor { get; protected set; }
@@ -21,5 +21,7 @@ namespace tabuleiro {
         public void IncrementarQuantMovimentos() {
             QuantMovimentos++;
         }
+
+        public abstract bool[,] MovimentosPossiveis();
     }
 }
