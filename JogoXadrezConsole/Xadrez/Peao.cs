@@ -57,6 +57,21 @@ namespace xadrez {
                     matriz[pos.Linha, pos.Coluna] = true;
                 }
 
+                //#Jogada en passant
+                if (Posicao.Linha == 3) {
+                    Posicao esquerda = new Posicao(Posicao.Linha, Posicao.Coluna - 1);
+
+                    if (Tabuleiro.PosicaoValida(esquerda) && ExisteInimigo(esquerda) && Tabuleiro.peca(esquerda) == Partida.VulneravelEnPassant) {
+                        matriz[esquerda.Linha - 1, esquerda.Coluna] = true;
+                    }
+
+                    Posicao direita = new Posicao(Posicao.Linha, Posicao.Coluna + 1);
+
+                    if (Tabuleiro.PosicaoValida(direita) && ExisteInimigo(direita) && Tabuleiro.peca(direita) == Partida.VulneravelEnPassant) {
+                        matriz[direita.Linha - 1, direita.Coluna] = true;
+                    }
+                }
+
             } else {
                 pos.DefinirValores(Posicao.Linha + 1, Posicao.Coluna);
                 if (Tabuleiro.PosicaoValida(pos) && Livre(pos)) {
@@ -77,6 +92,21 @@ namespace xadrez {
                 pos.DefinirValores(Posicao.Linha + 1, Posicao.Coluna + 1);
                 if (Tabuleiro.PosicaoValida(pos) && ExisteInimigo(pos)) {
                     matriz[pos.Linha, pos.Coluna] = true;
+                }
+
+                //#Jogada en passant
+                if (Posicao.Linha == 4) {
+                    Posicao esquerda = new Posicao(Posicao.Linha, Posicao.Coluna - 1);
+
+                    if (Tabuleiro.PosicaoValida(esquerda) && ExisteInimigo(esquerda) && Tabuleiro.peca(esquerda) == Partida.VulneravelEnPassant) {
+                        matriz[esquerda.Linha + 1, esquerda.Coluna] = true;
+                    }
+
+                    Posicao direita = new Posicao(Posicao.Linha, Posicao.Coluna + 1);
+
+                    if (Tabuleiro.PosicaoValida(direita) && ExisteInimigo(direita) && Tabuleiro.peca(direita) == Partida.VulneravelEnPassant) {
+                        matriz[direita.Linha + 1, direita.Coluna] = true;
+                    }
                 }
             }
 
