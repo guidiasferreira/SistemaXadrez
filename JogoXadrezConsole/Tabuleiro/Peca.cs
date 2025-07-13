@@ -13,13 +13,31 @@ namespace tabuleiro {
 
         public Peca(Tabuleiro tabuleiro, Cor cor) {
             Posicao = null;
-            Cor = cor;        
+            Cor = cor;
             Tabuleiro = tabuleiro;
             QuantMovimentos = 0;
         }
 
         public void IncrementarQuantMovimentos() {
             QuantMovimentos++;
+        }
+
+        public bool ExisteMovimentosPossiveis() {
+            bool[,] matriz = MovimentosPossiveis();
+
+            for (int i = 0; i < Tabuleiro.Linha; i++) {
+                for (int j = 0; j < Tabuleiro.Coluna; j++) {
+                    if (matriz[i, j]) {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
+
+        public bool PodeMover(Posicao pos) {
+            return MovimentosPossiveis()[pos.Linha, pos.Coluna];
         }
 
         public abstract bool[,] MovimentosPossiveis();

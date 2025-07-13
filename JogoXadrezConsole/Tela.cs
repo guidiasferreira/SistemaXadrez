@@ -67,7 +67,7 @@ namespace JogoXadrezConsole {
 
                 } else {
                     ConsoleColor aux = Console.ForegroundColor;
-                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                    Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.Write(peca);
                     Console.ForegroundColor = aux;
                 }
