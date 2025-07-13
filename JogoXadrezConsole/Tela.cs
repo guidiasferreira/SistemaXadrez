@@ -97,10 +97,10 @@ namespace JogoXadrezConsole {
 
         public static PosicaoXadrez LerPosicaoXadrez() {
             string s = Console.ReadLine();
-            char coluna = s[0];
-            int linha = int.Parse(s[1] + "");
+            char Coluna = s[0];
+            int Linha = int.Parse(s[1] + "");
 
-            return new PosicaoXadrez(coluna, linha);
+            return new PosicaoXadrez(Coluna, Linha);
         }
 
         public static void ImprimirPeca(Peca peca) {

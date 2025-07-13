@@ -14,11 +14,11 @@ namespace tabuleiro {
         public Tabuleiro(int linha, int coluna) {
             Linha = linha;
             Coluna = coluna;
-            pecas = new Peca[linha, coluna];
+            pecas = new Peca[Linha, Coluna];
         }
 
-        public Peca peca(int linha, int coluna) {
-            return pecas[linha, coluna];
+        public Peca peca(int Linha, int Coluna) {
+            return pecas[Linha, Coluna];
         }
 
         public Peca peca(Posicao pos) {
