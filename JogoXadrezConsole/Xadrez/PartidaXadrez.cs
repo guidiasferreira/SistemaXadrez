@@ -40,7 +40,7 @@ namespace xadrez {
                 capturadas.Add(pecaCapturada);
             }
 
-            //#Jogada Roque pequeno
+            //#Jogada Especial: (Roque pequeno)
             if (p is Rei && destino.Coluna == origem.Coluna + 2) {
                 Posicao origemT = new Posicao(origem.Linha, origem.Coluna + 3);
                 Posicao destinoT = new Posicao(origem.Linha, origem.Coluna + 1);
@@ -50,7 +50,7 @@ namespace xadrez {
                 Tabuleiro.ColocarPeca(T, destinoT);
             }
 
-            //#Jogada Roque grande
+            //#Jogada Especial: (Roque grande)
             if (p is Rei && destino.Coluna == origem.Coluna - 2) {
                 Posicao origemT = new Posicao(origem.Linha, origem.Coluna - 4);
                 Posicao destinoT = new Posicao(origem.Linha, origem.Coluna - 1);
@@ -60,7 +60,7 @@ namespace xadrez {
                 Tabuleiro.ColocarPeca(T, destinoT);
             }
 
-            //#Jogada en passant
+            //#Jogada Especial: (En passant)
             if (p is Peao) {
                 if (origem.Coluna != destino.Coluna && pecaCapturada == null) {
                     Posicao posP;
@@ -90,7 +90,7 @@ namespace xadrez {
 
             Tabuleiro.ColocarPeca(p, origem);
 
-            //#Jogada Roque pequeno
+            //#Jogada Especial: (Roque pequeno)
             if (p is Rei && destino.Coluna == origem.Coluna + 2) {
                 Posicao origemT = new Posicao(origem.Linha, origem.Coluna + 3);
                 Posicao destinoT = new Posicao(origem.Linha, origem.Coluna + 1);
@@ -100,7 +100,7 @@ namespace xadrez {
                 Tabuleiro.ColocarPeca(T, origemT);
             }
 
-            //#Jogada Roque grande
+            //#Jogada Especial: (Roque grande)
             if (p is Rei && destino.Coluna == origem.Coluna - 2) {
                 Posicao origemT = new Posicao(origem.Linha, origem.Coluna - 4);
                 Posicao destinoT = new Posicao(origem.Linha, origem.Coluna - 1);
@@ -110,7 +110,7 @@ namespace xadrez {
                 Tabuleiro.ColocarPeca(T, origemT);
             }
 
-            //#Jogada en passant
+            //#Jogada Especial: (En passant)
             if (p is Peao) {
                 if (origem.Coluna != destino.Coluna && pecaCapturada == VulneravelEnPassant) {
                     Peca peao = Tabuleiro.RetirarPeca(destino);
@@ -136,6 +136,21 @@ namespace xadrez {
                 throw new TabuleiroException("Você não pode se colocar me xeque!");
             }
 
+            Peca p = Tabuleiro.peca(destino);
+
+            //#Jogada Especial: (Promoção)
+            if (p is Peao) {
+                if ((p.Cor == Cor.Branca && destino.Linha == 0) || (p.Cor == Cor.Preta && destino.Linha == 7)) {
+                    p = Tabuleiro.RetirarPeca(destino);
+                    pecas.Remove(p);
+
+                    Peca dama = new Dama(Tabuleiro, p.Cor);
+                    Tabuleiro.ColocarPeca(dama, destino);
+                    pecas.Add(dama);
+                }
+            }
+
+
             if (EstaEmXeque(Adversaria(JogadorAtual))) {
                 Xeque = true;
 
@@ -151,9 +166,7 @@ namespace xadrez {
                 MudaJogador();
             }
 
-            Peca p = Tabuleiro.peca(destino);
-
-            //#Jogada en passant
+            //#Jogada Especial: (En Passant)
             if (p is Peao && (destino.Linha == origem.Linha - 2 || destino.Linha == origem.Linha + 2)) {
                 VulneravelEnPassant = p;
 

@@ -57,7 +57,7 @@ namespace xadrez {
                     matriz[pos.Linha, pos.Coluna] = true;
                 }
 
-                //#Jogada en passant
+                //#Jogada Especial: (En passant)
                 if (Posicao.Linha == 3) {
                     Posicao esquerda = new Posicao(Posicao.Linha, Posicao.Coluna - 1);
 
@@ -94,7 +94,7 @@ namespace xadrez {
                     matriz[pos.Linha, pos.Coluna] = true;
                 }
 
-                //#Jogada en passant
+                //#Jogada Especial: (En passant)
                 if (Posicao.Linha == 4) {
                     Posicao esquerda = new Posicao(Posicao.Linha, Posicao.Coluna - 1);
 
