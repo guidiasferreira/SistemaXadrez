@@ -28,5 +28,4 @@
 <h2>▶️ Como executar</h2>
 
 <p>1. Clone o repositório:
-   ```bash
    git clone https://github.com/seu-usuario/sistema-xadrez-csharp.git</p>
