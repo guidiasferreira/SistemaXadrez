@@ -27,5 +27,7 @@
 
 <h2>▶️ Como executar</h2>
 
-<p>1. Clone o repositório:
-   git clone https://github.com/seu-usuario/sistema-xadrez-csharp.git</p>
+<p>1. Clone o repositório: git clone https://github.com/seu-usuario/sistema-xadrez-csharp.git</p>
+
+<h2>📷 Imagem do projeto</h2>
+<img src="./img/Console.png">
