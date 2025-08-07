@@ -1,6 +1,6 @@
 <h1>♟️ Sistema de Xadrez em C#</h1>
 
-<p>Este projeto foi desenvolvido como parte do curso C# - Programação Orientada a Objetos**, com o objetivo de praticar os principais conceitos da linguagem e da programação orientada a objetos (POO).</p>
+<p>Este projeto foi desenvolvido como parte do curso C# - Programação Orientada a Objetos, com o objetivo de praticar os principais conceitos da linguagem e da programação orientada a objetos (POO).</p>
 
 <h2>📚 Conceitos abordados</h2>
 
